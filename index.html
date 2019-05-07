@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>Barcode Chart</title>
+<link href="stylesheet.css" rel="stylesheet">
+
+
+<body>
+  <h1>Auswertung Qanary Pipelines</h1>
+  <div id="pipelines"></div>
+  <div class="container">
+
+    <div class="scatterPlot" id="selfEval-fmeasure-scatter"></div>
+    <div class="scatterPlot" id="qanaryEval-fmeasure-scatter"></div>
+  </div>
+  </div>
+  <h1>Datensatz: Qald9</h1>
+  <div class="container">
+    <div class="piePlot" id="answerTypes"></div>
+  </div>
+
+
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+  <script src="scatterPlot.js"></script>
+  <script src="barcodePlot.js"></script>
+  <script src="piePlot.js"></script>
+  <script src="main.js"></script>
+</body>

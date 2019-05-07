@@ -1,0 +1,65 @@
+body {
+    text-align: center;
+  }
+
+  svg {
+    margin: auto;
+  }
+
+  .fMeasure-label {
+    font-weight: bold;
+  }
+
+  #fmeasure-scatter {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tip {
+    position: absolute;
+    z-index: 10;
+    visibility: hidden;
+    background: black;
+    color: white;
+    padding: 12px;
+    border-radius: 2px;
+    text-align: left;
+  }
+
+  /* Creates a small triangle extender for the tooltip */
+
+  .d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+  }
+
+  /* Style northward tooltips differently */
+
+  .d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+  }
+
+  .heatmaplayer {
+    display: none;
+  }
+
+  .container{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+
+  .scatterPlot .piePlot{
+    width:600px;
+    height:600px;
+  }
