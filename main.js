@@ -164,7 +164,7 @@ function calcRecall(q) {
     if (q.NrExpected === 0 && q.NrSystem === 0) return 1;
     if (q.NrExpected === 0 && q.NrSystem > 0) return 0;
     if (q.NrExpected > 0 && q.NrSystem === 0) return 0;
-    return q.NrCorrect / q.NrSystem;
+    return q.NrCorrect / q.NrExpected;
 }
 
 function calcPrecision(q) {
