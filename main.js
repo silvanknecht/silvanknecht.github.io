@@ -40,10 +40,12 @@ d3.queue()
     .defer(d3.json, dataFolder + "17_results.json")
     .defer(d3.json, dataFolder + "18_results.json")
     .defer(d3.json, dataFolder + "19_results.json")
+    .defer(d3.json, dataFolder + "20_results.json")
     .defer(d3.json, dataFolder + "21_results.json")
     .defer(d3.json, dataFolder + "22_results.json")
     .defer(d3.json, dataFolder + "23_results.json")
     .defer(d3.json, dataFolder + "24_results.json")
+    .defer(d3.json, dataFolder + "sinaFehlerSuche.json")
     .await(splitCharts);
 
 function splitCharts(err, heatmap, qald9, ...charts) {
@@ -62,6 +64,7 @@ function splitCharts(err, heatmap, qald9, ...charts) {
     /* Draw Barcharts*/
     for (let sc of sortedCharts) {
         drawChart(sc.data, sc.info.id, sc.info.selfEval);
+        console.log(sc);
     }
 
     /* Draw Scatter Plots*/
