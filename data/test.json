@@ -1,0 +1,42 @@
+{
+    "info": {
+      "id": 19.1,
+      "qanaryEval": {
+        "gpr": 0,
+        "grc": 0,
+        "gfm": 0
+      }
+    },
+    "data":[
+        {
+            "QuestionID": 52,
+            "QuestionString": "Give me all movies with Tom Cruise.",
+            "ResourceURLs": "http://dbpedia.org/resource/Tom_Cruise, ",
+            "PropertyURLs": "http://dbpedia.org/ontology/Film, ",
+            "OntologyURLs": "http://dbpedia.org/ontology/Film, ",
+            "SPARQLQuery": "select * where {     ?v0   a   <http://dbpedia.org/ontology/Film>.   { <http://dbpedia.org/resource/Tom_Cruise>  <http://dbpedia.org/ontology/wikiPageWikiLink>  ?v0.  } UNION  { <http://dbpedia.org/resource/Tom_Cruise>  <http://dbpedia.org/ontology/spouse>  ?v0.  }   }, ",
+            "NrExpected": 26,
+            "NrSystem": 52,
+            "NrCorrect": 24
+          },  {
+            "QuestionID": 154,
+            "QuestionString": "Which books were written by Danielle Steel?",
+            "ResourceURLs": "http://dbpedia.org/resource/Danielle_Steel, ",
+            "PropertyURLs": "http://dbpedia.org/ontology/Book, http://dbpedia.org/ontology/author, ",
+            "OntologyURLs": "http://dbpedia.org/ontology/Book, ",
+            "SPARQLQuery": "select * where {     ?v0   a   <http://dbpedia.org/ontology/Book>.    ?v0   <http://dbpedia.org/ontology/author>   <http://dbpedia.org/resource/Danielle_Steel>.  }, ",
+            "NrExpected": 47,
+            "NrSystem": 47,
+            "NrCorrect": 47
+          }, {
+            "QuestionID": 214,
+            "QuestionString": "Give me all professional skateboarders from Sweden.",
+            "ResourceURLs": "http://dbpedia.org/resource/Sweden, ",
+            "PropertyURLs": "http://dbpedia.org/ontology/Skater, ",
+            "OntologyURLs": "http://dbpedia.org/ontology/Profession, ",
+            "SPARQLQuery": "select * where {     ?v0   a   <http://dbpedia.org/ontology/Skater>.   { ?v0  <http://dbpedia.org/ontology/location>  <http://dbpedia.org/resource/Sweden>.  } UNION  { ?v0  <http://dbpedia.org/ontology/country>  <http://dbpedia.org/resource/Sweden>.  }   }, ",
+            "NrExpected": 2,
+            "NrSystem": 5,
+            "NrCorrect": 0
+          }
+    ]}

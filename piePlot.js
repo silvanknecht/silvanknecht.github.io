@@ -9,7 +9,7 @@ function plotPie(answerTypes) {
 
     var layout = {
         title: {
-            text: "Antwort Typen",
+            text: "Antworttypen",
             font: {
                 family: "Arial, serif",
                 size: 24

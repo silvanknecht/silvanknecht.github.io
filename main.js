@@ -86,7 +86,7 @@ function analyzeQuestions(qald) {
 
 function calculate(charts) {
     for (let sc of charts) {
-        /** Calculate recall, precision and f-measure for every question.
+        /** Calculate MACRO recall, MACRO precision and MACRO f-measure QALD for every question.
                 Calculate F-measure for the entire pipeline*/
         let recallTot = 0;
         let precisionTot = 0;
