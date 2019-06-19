@@ -1,4 +1,4 @@
-function prepareData(sC, kind, plottitle) {
+function prepareData(sC, kind) {
     let trace = {
         x: [],
         y: [],

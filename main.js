@@ -1,9 +1,9 @@
 let figure;
 let dataFolder = "./data/";
-let questions = 150,
-  chartWidth = 5 * questions,
+const NrQuestions = 150;
+let chartWidth = 5 * NrQuestions,
   chartHeight = 35,
-  barWidth = chartWidth / questions, // chartWidth / 150;
+  barWidth = chartWidth / NrQuestions, // chartWidth / 150;
   barColor = "rgba(0, 0, 0)",
   titleWidth = 30,
   fmeasureWidth = 80;
@@ -15,7 +15,7 @@ let charts = [];
 
 let chartScale = d3
   .scaleLinear()
-  .domain([0, questions])
+  .domain([0, NrQuestions])
   .range([0, chartWidth]);
 
 d3.queue()
@@ -65,10 +65,6 @@ function splitCharts(err, heatmap, qald9, ...charts) {
   for (let sc of sortedCharts) {
     drawChart(sc.data, sc.info.id, sc.info.selfEval);
     console.log(sc);
-    console.log(
-        (2 * sc.info.selfEval.grc * sc.info.selfEval.gpr) /
-          (sc.info.selfEval.grc + sc.info.selfEval.gpr)
-      );
   }
 
   /* Draw Scatter Plots*/
@@ -112,9 +108,12 @@ function calculate(charts) {
 
     /** Add global Recall, Precicion and FMeasure to the Pipeline */
     sc.info.selfEval = {};
-    sc.info.selfEval.grc = recallTot / 150;
-    sc.info.selfEval.gpr = precisionTot / 150;
-    sc.info.selfEval.gfm = Number((fMeasureTot / 150).toFixed(3));
+    sc.info.selfEval.grc = recallTot / NrQuestions;
+    sc.info.selfEval.gpr = precisionTot / NrQuestions;
+    sc.info.selfEval.gfm = Number((fMeasureTot / NrQuestions).toFixed(3));
+    sc.info.selfEval.QALDgfm =
+      (2 * sc.info.selfEval.grc * sc.info.selfEval.gpr) /
+      (sc.info.selfEval.grc + sc.info.selfEval.gpr);
   }
 
   return charts;
@@ -130,7 +129,7 @@ function sortCharts(charts) {
     } else {
       for (let [i, sd] of sortedCharts.entries()) {
         // sorted data
-        if (sd.info.selfEval.gfm <= dts.info.selfEval.gfm) {
+        if (sd.info.selfEval.QALDgfm <= dts.info.selfEval.QALDgfm) {
           sortedCharts.splice(i, 0, dts);
           break;
         } else {

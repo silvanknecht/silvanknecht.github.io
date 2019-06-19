@@ -43,7 +43,7 @@ function drawChart(data, id, eval) {
         .append("text")
         .attr("class", "fmeasure-score")
         .attr("dy", "1em")
-        .text(eval.gfm);
+        .text(eval.QALDgfm);
 
     barcodeGroup = svgEl
         .append("g")
